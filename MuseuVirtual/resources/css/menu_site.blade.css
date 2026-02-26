@@ -1,0 +1,115 @@
+        body {
+            font-family: 'Lato', sans-serif;
+            background: rgb(0, 0, 0);
+            color: #F1EEDD;
+        }
+
+        /* Navbar */
+        #nav #div {
+            background: #f1eedd;
+        }
+
+        /* Links da navbar */
+        #menu li a {
+            color: #565851;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        /* Hover na navbar */
+        #menu li a:hover {
+            color: #000;
+            /* muda a cor da letra no hover */
+            transform: scale(1.05);
+            /* leve zoom */
+        }
+
+        /* Link ativo */
+        #menu li a.active {
+            color: #000;
+            /* link da página atual fica preto */
+            font-weight: bold;
+            /* opcional: destaca ainda mais */
+        }
+
+        @media (max-width: 768px) {
+            #btn-mobile {
+                display: block;
+            }
+
+            #menu {
+                display: block;
+                position: absolute;
+                width: 100%;
+                background: #F1EEDD;
+                right: 0px;
+                height: 0px;
+                transition: .6s;
+                z-index: 1000;
+                visibility: hidden;
+                overflow-y: hidden;
+            }
+
+            #nav.active #menu {
+                height: 100vh;
+                visibility: visible;
+                overflow-y: auto;
+            }
+
+            #nav #div {
+                border-radius: 0;
+                margin-top: 0;
+            }
+
+            #btn-mobile {
+                display: flex;
+                padding: .5rem 1rem;
+                font-size: 1rem;
+                border: none;
+                cursor: pointer;
+                gap: .5rem;
+            }
+
+            #hamburguer {
+                width: 20px;
+                border-top: 2px solid;
+                display: block;
+                color: #565851;
+            }
+
+            #hamburguer::after,
+            #hamburguer::before {
+                content: '';
+                display: block;
+                width: 20px;
+                height: 2px;
+                background: currentColor;
+                margin-top: 5px;
+                transition: .3s;
+                position: relative;
+            }
+
+            #nav.active #hamburguer {
+                border-top-color: transparent;
+            }
+
+            #nav.active #hamburguer::before {
+                transform: rotate(135deg);
+            }
+
+            #nav.active #hamburguer::after {
+                transform: rotate(-135deg);
+                top: -7px;
+            }
+
+            #menu #cadastro,
+            #login {
+                background: none;
+                color: #565851;
+            }
+
+            /* Hover mobile */
+            #menu li a:hover {
+                color: #000;
+            }
+        }
